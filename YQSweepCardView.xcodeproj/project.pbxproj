@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5502CD081BCEA88A00FD6246 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD071BCEA88A00FD6246 /* main.m */; };
+		5502CD0B1BCEA88A00FD6246 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD0A1BCEA88A00FD6246 /* AppDelegate.m */; };
+		5502CD0E1BCEA88A00FD6246 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD0D1BCEA88A00FD6246 /* ViewController.m */; };
+		5502CD111BCEA88A00FD6246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5502CD0F1BCEA88A00FD6246 /* Main.storyboard */; };
+		5502CD131BCEA88A00FD6246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5502CD121BCEA88A00FD6246 /* Assets.xcassets */; };
+		5502CD161BCEA88A00FD6246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5502CD141BCEA88A00FD6246 /* LaunchScreen.storyboard */; };
+		5502CD211BCEA88A00FD6246 /* YQSweepCardViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD201BCEA88A00FD6246 /* YQSweepCardViewTests.m */; };
+		5502CD2C1BCEA88A00FD6246 /* YQSweepCardViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD2B1BCEA88A00FD6246 /* YQSweepCardViewUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5502CD1D1BCEA88A00FD6246 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5502CCFB1BCEA88A00FD6246 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5502CD021BCEA88A00FD6246;
+			remoteInfo = YQSweepCardView;
+		};
+		5502CD281BCEA88A00FD6246 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5502CCFB1BCEA88A00FD6246 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5502CD021BCEA88A00FD6246;
+			remoteInfo = YQSweepCardView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5502CD031BCEA88A00FD6246 /* YQSweepCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YQSweepCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5502CD071BCEA88A00FD6246 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5502CD091BCEA88A00FD6246 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5502CD0A1BCEA88A00FD6246 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5502CD0C1BCEA88A00FD6246 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5502CD0D1BCEA88A00FD6246 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5502CD101BCEA88A00FD6246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5502CD121BCEA88A00FD6246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5502CD151BCEA88A00FD6246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5502CD171BCEA88A00FD6246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5502CD1C1BCEA88A00FD6246 /* YQSweepCardViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YQSweepCardViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5502CD201BCEA88A00FD6246 /* YQSweepCardViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YQSweepCardViewTests.m; sourceTree = "<group>"; };
+		5502CD221BCEA88A00FD6246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5502CD271BCEA88A00FD6246 /* YQSweepCardViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YQSweepCardViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5502CD2B1BCEA88A00FD6246 /* YQSweepCardViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YQSweepCardViewUITests.m; sourceTree = "<group>"; };
+		5502CD2D1BCEA88A00FD6246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5502CD001BCEA88A00FD6246 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5502CD191BCEA88A00FD6246 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5502CD241BCEA88A00FD6246 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5502CCFA1BCEA88A00FD6246 = {
+			isa = PBXGroup;
+			children = (
+				5502CD051BCEA88A00FD6246 /* YQSweepCardView */,
+				5502CD1F1BCEA88A00FD6246 /* YQSweepCardViewTests */,
+				5502CD2A1BCEA88A00FD6246 /* YQSweepCardViewUITests */,
+				5502CD041BCEA88A00FD6246 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5502CD041BCEA88A00FD6246 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5502CD031BCEA88A00FD6246 /* YQSweepCardView.app */,
+				5502CD1C1BCEA88A00FD6246 /* YQSweepCardViewTests.xctest */,
+				5502CD271BCEA88A00FD6246 /* YQSweepCardViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5502CD051BCEA88A00FD6246 /* YQSweepCardView */ = {
+			isa = PBXGroup;
+			children = (
+				5502CD091BCEA88A00FD6246 /* AppDelegate.h */,
+				5502CD0A1BCEA88A00FD6246 /* AppDelegate.m */,
+				5502CD0C1BCEA88A00FD6246 /* ViewController.h */,
+				5502CD0D1BCEA88A00FD6246 /* ViewController.m */,
+				5502CD0F1BCEA88A00FD6246 /* Main.storyboard */,
+				5502CD121BCEA88A00FD6246 /* Assets.xcassets */,
+				5502CD141BCEA88A00FD6246 /* LaunchScreen.storyboard */,
+				5502CD171BCEA88A00FD6246 /* Info.plist */,
+				5502CD061BCEA88A00FD6246 /* Supporting Files */,
+			);
+			path = YQSweepCardView;
+			sourceTree = "<group>";
+		};
+		5502CD061BCEA88A00FD6246 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5502CD071BCEA88A00FD6246 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5502CD1F1BCEA88A00FD6246 /* YQSweepCardViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				5502CD201BCEA88A00FD6246 /* YQSweepCardViewTests.m */,
+				5502CD221BCEA88A00FD6246 /* Info.plist */,
+			);
+			path = YQSweepCardViewTests;
+			sourceTree = "<group>";
+		};
+		5502CD2A1BCEA88A00FD6246 /* YQSweepCardViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5502CD2B1BCEA88A00FD6246 /* YQSweepCardViewUITests.m */,
+				5502CD2D1BCEA88A00FD6246 /* Info.plist */,
+			);
+			path = YQSweepCardViewUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5502CD021BCEA88A00FD6246 /* YQSweepCardView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5502CD301BCEA88A00FD6246 /* Build configuration list for PBXNativeTarget "YQSweepCardView" */;
+			buildPhases = (
+				5502CCFF1BCEA88A00FD6246 /* Sources */,
+				5502CD001BCEA88A00FD6246 /* Frameworks */,
+				5502CD011BCEA88A00FD6246 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YQSweepCardView;
+			productName = YQSweepCardView;
+			productReference = 5502CD031BCEA88A00FD6246 /* YQSweepCardView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5502CD1B1BCEA88A00FD6246 /* YQSweepCardViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5502CD331BCEA88A00FD6246 /* Build configuration list for PBXNativeTarget "YQSweepCardViewTests" */;
+			buildPhases = (
+				5502CD181BCEA88A00FD6246 /* Sources */,
+				5502CD191BCEA88A00FD6246 /* Frameworks */,
+				5502CD1A1BCEA88A00FD6246 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5502CD1E1BCEA88A00FD6246 /* PBXTargetDependency */,
+			);
+			name = YQSweepCardViewTests;
+			productName = YQSweepCardViewTests;
+			productReference = 5502CD1C1BCEA88A00FD6246 /* YQSweepCardViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5502CD261BCEA88A00FD6246 /* YQSweepCardViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5502CD361BCEA88A00FD6246 /* Build configuration list for PBXNativeTarget "YQSweepCardViewUITests" */;
+			buildPhases = (
+				5502CD231BCEA88A00FD6246 /* Sources */,
+				5502CD241BCEA88A00FD6246 /* Frameworks */,
+				5502CD251BCEA88A00FD6246 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5502CD291BCEA88A00FD6246 /* PBXTargetDependency */,
+			);
+			name = YQSweepCardViewUITests;
+			productName = YQSweepCardViewUITests;
+			productReference = 5502CD271BCEA88A00FD6246 /* YQSweepCardViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5502CCFB1BCEA88A00FD6246 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "王叶庆";
+				TargetAttributes = {
+					5502CD021BCEA88A00FD6246 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					5502CD1B1BCEA88A00FD6246 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 5502CD021BCEA88A00FD6246;
+					};
+					5502CD261BCEA88A00FD6246 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 5502CD021BCEA88A00FD6246;
+					};
+				};
+			};
+			buildConfigurationList = 5502CCFE1BCEA88A00FD6246 /* Build configuration list for PBXProject "YQSweepCardView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5502CCFA1BCEA88A00FD6246;
+			productRefGroup = 5502CD041BCEA88A00FD6246 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5502CD021BCEA88A00FD6246 /* YQSweepCardView */,
+				5502CD1B1BCEA88A00FD6246 /* YQSweepCardViewTests */,
+				5502CD261BCEA88A00FD6246 /* YQSweepCardViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5502CD011BCEA88A00FD6246 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5502CD161BCEA88A00FD6246 /* LaunchScreen.storyboard in Resources */,
+				5502CD131BCEA88A00FD6246 /* Assets.xcassets in Resources */,
+				5502CD111BCEA88A00FD6246 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5502CD1A1BCEA88A00FD6246 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5502CD251BCEA88A00FD6246 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5502CCFF1BCEA88A00FD6246 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5502CD0E1BCEA88A00FD6246 /* ViewController.m in Sources */,
+				5502CD0B1BCEA88A00FD6246 /* AppDelegate.m in Sources */,
+				5502CD081BCEA88A00FD6246 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5502CD181BCEA88A00FD6246 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5502CD211BCEA88A00FD6246 /* YQSweepCardViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5502CD231BCEA88A00FD6246 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5502CD2C1BCEA88A00FD6246 /* YQSweepCardViewUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5502CD1E1BCEA88A00FD6246 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5502CD021BCEA88A00FD6246 /* YQSweepCardView */;
+			targetProxy = 5502CD1D1BCEA88A00FD6246 /* PBXContainerItemProxy */;
+		};
+		5502CD291BCEA88A00FD6246 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5502CD021BCEA88A00FD6246 /* YQSweepCardView */;
+			targetProxy = 5502CD281BCEA88A00FD6246 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5502CD0F1BCEA88A00FD6246 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5502CD101BCEA88A00FD6246 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5502CD141BCEA88A00FD6246 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5502CD151BCEA88A00FD6246 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5502CD2E1BCEA88A00FD6246 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5502CD2F1BCEA88A00FD6246 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5502CD311BCEA88A00FD6246 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YQSweepCardView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyq.YQSweepCardView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5502CD321BCEA88A00FD6246 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YQSweepCardView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyq.YQSweepCardView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5502CD341BCEA88A00FD6246 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YQSweepCardViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyq.YQSweepCardViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YQSweepCardView.app/YQSweepCardView";
+			};
+			name = Debug;
+		};
+		5502CD351BCEA88A00FD6246 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YQSweepCardViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyq.YQSweepCardViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YQSweepCardView.app/YQSweepCardView";
+			};
+			name = Release;
+		};
+		5502CD371BCEA88A00FD6246 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YQSweepCardViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyq.YQSweepCardViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YQSweepCardView;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		5502CD381BCEA88A00FD6246 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YQSweepCardViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyq.YQSweepCardViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YQSweepCardView;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5502CCFE1BCEA88A00FD6246 /* Build configuration list for PBXProject "YQSweepCardView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5502CD2E1BCEA88A00FD6246 /* Debug */,
+				5502CD2F1BCEA88A00FD6246 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5502CD301BCEA88A00FD6246 /* Build configuration list for PBXNativeTarget "YQSweepCardView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5502CD311BCEA88A00FD6246 /* Debug */,
+				5502CD321BCEA88A00FD6246 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5502CD331BCEA88A00FD6246 /* Build configuration list for PBXNativeTarget "YQSweepCardViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5502CD341BCEA88A00FD6246 /* Debug */,
+				5502CD351BCEA88A00FD6246 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5502CD361BCEA88A00FD6246 /* Build configuration list for PBXNativeTarget "YQSweepCardViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5502CD371BCEA88A00FD6246 /* Debug */,
+				5502CD381BCEA88A00FD6246 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5502CCFB1BCEA88A00FD6246 /* Project object */;
+}
