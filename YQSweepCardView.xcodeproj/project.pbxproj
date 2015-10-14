@@ -15,6 +15,12 @@
 		5502CD161BCEA88A00FD6246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5502CD141BCEA88A00FD6246 /* LaunchScreen.storyboard */; };
 		5502CD211BCEA88A00FD6246 /* YQSweepCardViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD201BCEA88A00FD6246 /* YQSweepCardViewTests.m */; };
 		5502CD2C1BCEA88A00FD6246 /* YQSweepCardViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD2B1BCEA88A00FD6246 /* YQSweepCardViewUITests.m */; };
+		5502CD411BCEA92000FD6246 /* YQSweepCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD401BCEA92000FD6246 /* YQSweepCardView.m */; settings = {ASSET_TAGS = (); }; };
+		5502CD421BCEA92000FD6246 /* YQSweepCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD401BCEA92000FD6246 /* YQSweepCardView.m */; settings = {ASSET_TAGS = (); }; };
+		5502CD431BCEA92000FD6246 /* YQSweepCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD401BCEA92000FD6246 /* YQSweepCardView.m */; settings = {ASSET_TAGS = (); }; };
+		5502CD461BCEA9A600FD6246 /* YQSweepCardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD451BCEA9A600FD6246 /* YQSweepCardItem.m */; settings = {ASSET_TAGS = (); }; };
+		5502CD471BCEA9A600FD6246 /* YQSweepCardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD451BCEA9A600FD6246 /* YQSweepCardItem.m */; settings = {ASSET_TAGS = (); }; };
+		5502CD481BCEA9A600FD6246 /* YQSweepCardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD451BCEA9A600FD6246 /* YQSweepCardItem.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,10 @@
 		5502CD271BCEA88A00FD6246 /* YQSweepCardViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YQSweepCardViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5502CD2B1BCEA88A00FD6246 /* YQSweepCardViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YQSweepCardViewUITests.m; sourceTree = "<group>"; };
 		5502CD2D1BCEA88A00FD6246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5502CD3F1BCEA92000FD6246 /* YQSweepCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSweepCardView.h; sourceTree = "<group>"; };
+		5502CD401BCEA92000FD6246 /* YQSweepCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQSweepCardView.m; sourceTree = "<group>"; };
+		5502CD441BCEA9A600FD6246 /* YQSweepCardItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQSweepCardItem.h; sourceTree = "<group>"; };
+		5502CD451BCEA9A600FD6246 /* YQSweepCardItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQSweepCardItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,7 @@
 		5502CCFA1BCEA88A00FD6246 = {
 			isa = PBXGroup;
 			children = (
+				5502CD3E1BCEA90D00FD6246 /* Classes */,
 				5502CD051BCEA88A00FD6246 /* YQSweepCardView */,
 				5502CD1F1BCEA88A00FD6246 /* YQSweepCardViewTests */,
 				5502CD2A1BCEA88A00FD6246 /* YQSweepCardViewUITests */,
@@ -138,6 +149,17 @@
 				5502CD2D1BCEA88A00FD6246 /* Info.plist */,
 			);
 			path = YQSweepCardViewUITests;
+			sourceTree = "<group>";
+		};
+		5502CD3E1BCEA90D00FD6246 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5502CD441BCEA9A600FD6246 /* YQSweepCardItem.h */,
+				5502CD451BCEA9A600FD6246 /* YQSweepCardItem.m */,
+				5502CD3F1BCEA92000FD6246 /* YQSweepCardView.h */,
+				5502CD401BCEA92000FD6246 /* YQSweepCardView.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +295,8 @@
 				5502CD0E1BCEA88A00FD6246 /* ViewController.m in Sources */,
 				5502CD0B1BCEA88A00FD6246 /* AppDelegate.m in Sources */,
 				5502CD081BCEA88A00FD6246 /* main.m in Sources */,
+				5502CD411BCEA92000FD6246 /* YQSweepCardView.m in Sources */,
+				5502CD461BCEA9A600FD6246 /* YQSweepCardItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +304,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5502CD471BCEA9A600FD6246 /* YQSweepCardItem.m in Sources */,
 				5502CD211BCEA88A00FD6246 /* YQSweepCardViewTests.m in Sources */,
+				5502CD421BCEA92000FD6246 /* YQSweepCardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +314,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5502CD481BCEA9A600FD6246 /* YQSweepCardItem.m in Sources */,
 				5502CD2C1BCEA88A00FD6246 /* YQSweepCardViewUITests.m in Sources */,
+				5502CD431BCEA92000FD6246 /* YQSweepCardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
