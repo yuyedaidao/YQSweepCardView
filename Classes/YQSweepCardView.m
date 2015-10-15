@@ -8,14 +8,52 @@
 
 #import "YQSweepCardView.h"
 
+/**
+ *  堆叠的数量
+ */
+static NSInteger const StackCount = 3;
+
 @interface YQSweepCardView ()
 
 @property (nonatomic, strong) NSMutableDictionary *registerInfo;
 @property (nonatomic, strong) NSMutableDictionary<NSString *,NSMutableArray *> *reusableDic;
+@property (nonatomic, strong) NSMutableArray<YQSweepCardItem *> *livingItems;
 
 @end
 
 @implementation YQSweepCardView
+
+
+- (instancetype)init{
+    if(self = [super init]){
+        [self commonInit];
+    }
+    return self;
+}
+
+
+#pragma mark self help
+
+- (void)commonInit{
+    _contentInsets = UIEdgeInsetsMake(30, 10, 10, 10);
+    _stackCount = StackCount;
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+    [self addGestureRecognizer:pan];
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
+    [self addGestureRecognizer:swipe];
+    self.userInteractionEnabled = YES;
+}
+
+- (void)panAction:(id)sender{
+ 
+}
+- (void)swipeAction:(id)sender{
+    
+}
+
+- (void)configureTransformForItem:(YQSweepCardItem *)item atIndex:(NSInteger)index{
+    // 
+}
 
 #pragma mark public
 - (__kindof YQSweepCardItem *)dequeueReusableItemWithIdentifier:(NSString *)identifier{
@@ -49,6 +87,34 @@
 }
 - (void)registerNib:(UINib *)nib forItemReuseIdentifier:(NSString *)identifier{
     self.registerInfo[identifier] = nib;
+}
+
+- (void)reloadData{
+    if(self.itemCount){
+        if([self.dataSource respondsToSelector:@selector(sweepCardView:itemForIndex:)]){
+            for (int i = 0; i<self.stackCount; i++) {
+                if(i >= self.itemCount) break;
+                YQSweepCardItem *item = [self.dataSource sweepCardView:self itemForIndex:i];
+                [self.livingItems addObject:item];
+                [self addSubview:item];
+            }
+        }
+    }
+}
+
+#pragma mark override
+- (void)setDataSource:(id<YQSweepCardViewDataSource>)dataSource{
+    _dataSource = dataSource;
+    if(dataSource){
+        [self reloadData];
+    }
+}
+
+- (NSMutableArray *)livingItems{
+    if(!_livingItems){
+        _livingItems = [NSMutableArray array];
+    }
+    return _livingItems;
 }
 - (NSMutableDictionary *)registerInfo{
     if(!_registerInfo){
