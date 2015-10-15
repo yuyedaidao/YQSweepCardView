@@ -39,20 +39,29 @@ static NSInteger const StackCount = 3;
     _stackCount = StackCount;
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
     [self addGestureRecognizer:pan];
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
-    [self addGestureRecognizer:swipe];
+//    UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
+//    left.direction = UISwipeGestureRecognizerDirectionLeft;
+//    [self addGestureRecognizer:left];
+//    UISwipeGestureRecognizer *down = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
+//    down.direction = UISwipeGestureRecognizerDirectionDown;
+//    [self addGestureRecognizer:down];
+    UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
+    right.direction = UISwipeGestureRecognizerDirectionDown;
+    [self addGestureRecognizer:right];
+
     self.userInteractionEnabled = YES;
 }
 
 - (void)panAction:(id)sender{
- 
+    //左滑，随手势向左下角歪到，结束时根据临界值决定复位或者移除视图
 }
-- (void)swipeAction:(id)sender{
+- (void)swipeAction:(UISwipeGestureRecognizer *)sender{
+    //向右扫，进来视图
     
 }
 
 - (void)configureTransformForItem:(YQSweepCardItem *)item atIndex:(NSInteger)index{
-    // 
+    //
 }
 
 #pragma mark public
