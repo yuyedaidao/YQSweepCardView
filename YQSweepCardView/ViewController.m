@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
+#import "YQSweepCardView.h"
+@interface ViewController ()<YQSweepCardViewDataSource>
+@property (weak, nonatomic) IBOutlet YQSweepCardView *cardView;
 
 @end
 
@@ -17,8 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.cardView registerClass:[YQSweepCardItem class] forItemReuseIdentifier:@"A"];
+    self.cardView.dataSource = self;
+    self.cardView.itemCount = 7;
+    [self.cardView reloadData];
 }
 
+
+- (YQSweepCardItem *)sweepCardView:(YQSweepCardView *)sweepCardView itemForIndex:(NSInteger)index{
+    NSLog(@"------%d",index);
+    YQSweepCardItem *item =  [sweepCardView dequeueReusableItemWithIdentifier:@"A"];
+    item.backgroundColor = [UIColor grayColor];
+    return item;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

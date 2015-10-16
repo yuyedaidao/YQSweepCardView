@@ -21,18 +21,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YQSweepCardView : UIView
 
-@property (nonatomic, weak) id<YQSweepCardViewDataSource> dataSource;
-
 #pragma mark optional
 @property (nonatomic, assign) UIEdgeInsets contentInsets;
-@property (nonatomic, assign) NSInteger stackCount;
-@property (nonatomic, assign) CGFloat backItemScale;
+@property (nonatomic, assign) IBInspectable NSInteger stackCount;
+@property (nonatomic, assign) IBInspectable CGFloat backItemScale;
 /**
  *  为了让后边的item在视图上显示出边框，调节此值可能需要配合调节contentInsets的值
  */
-@property (nonatomic, assign) CGFloat backItemOffset;
+@property (nonatomic, assign) IBInspectable CGFloat backItemOffset;
 #pragma mark required
-@property (nonatomic, assign) NSInteger itemCount;
+@property (nonatomic, weak) IBInspectable id<YQSweepCardViewDataSource> dataSource;
+@property (nonatomic, assign) IBInspectable NSInteger itemCount;
 - (void)registerNib:(nullable UINib *)nib forItemReuseIdentifier:(NSString *)identifier;
 - (void)registerClass:(nullable Class)itemClass forItemReuseIdentifier:(NSString *)identifier;
 - (__kindof YQSweepCardItem *)dequeueReusableItemWithIdentifier:(NSString *)identifier;
