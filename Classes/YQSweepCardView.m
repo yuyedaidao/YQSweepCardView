@@ -33,7 +33,7 @@ static NSInteger const StackCount = 3;
 @property (nonatomic, strong) NSMutableDictionary *registerInfo;
 @property (nonatomic, strong) NSMutableDictionary<NSString *,NSMutableArray *> *reusableDic;
 @property (nonatomic, strong) NSMutableArray<YQSweepCardItem *> *livingItems;
-
+@property (nonatomic, assign) CGSize topItemSize;
 @end
 
 @implementation YQSweepCardView
@@ -57,6 +57,8 @@ static NSInteger const StackCount = 3;
 #pragma mark self help
 
 - (void)commonInit{
+    _backItemScale = 0.8f;
+    _backItemOffset = 15.0f;
     _contentInsets = UIEdgeInsetsMake(30, 10, 10, 10);
     _stackCount = StackCount;
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
@@ -82,13 +84,6 @@ static NSInteger const StackCount = 3;
     
 }
 
-- (void)configureTransformForItem:(YQSweepCardItem *)item atIndex:(NSInteger)index{
-    //
-    item.frame = CGRectMake(self.contentInsets.left, self.contentInsets.top, CGRectGetWidth(self.frame)-self.contentInsets.left-self.contentInsets.right, CGRectGetHeight(self.frame)-self.contentInsets.top-self.contentInsets.bottom);
-    CGFloat scale = 1-index*self.backItemScale;
-    item.transform = CGAffineTransformMakeScale(scale, scale);
-}
-
 #pragma mark public
 - (__kindof YQSweepCardItem *)dequeueReusableItemWithIdentifier:(NSString *)identifier{
     id obj = self.registerInfo[identifier];
@@ -103,11 +98,9 @@ static NSInteger const StackCount = 3;
     }else{
         if([obj isKindOfClass:[UINib class]]){
             YQSweepCardItem *item = (YQSweepCardItem *)[(UINib *)obj instantiateWithOwner:nil options:nil];
-            [array addObject:item];
             return item;
         }else if([(Class)obj isSubclassOfClass:[YQSweepCardItem class]]){
             YQSweepCardItem *item = (YQSweepCardItem *)[[(Class)obj alloc] init];
-            [array addObject:item];
             return item;
         }else{
             NSAssert1(NO, @"您注册identifier为%@的视图并非是YQSweepCardItem或其子类", identifier);
@@ -137,29 +130,44 @@ static NSInteger const StackCount = 3;
                 YQSweepCardItem *item = [self.dataSource sweepCardView:self itemForIndex:i];
                 item.itemScale = 1;
                 [self.livingItems addObject:item];
-                item.frame = CGRectMake(self.contentInsets.left, self.contentInsets.top, CGRectGetWidth(self.frame)-self.contentInsets.left-self.contentInsets.right, CGRectGetHeight(self.frame)-self.contentInsets.top-self.contentInsets.bottom);
                 [self addSubview:item];
+                //constraints
+                item.translatesAutoresizingMaskIntoConstraints = NO;
+                [self addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1 constant:self.contentInsets.left]];
+                [self addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1 constant:-self.contentInsets.right]];
+                [self addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:self.contentInsets.top]];
+                [self addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:-self.contentInsets.bottom]];
             }
         }
-        
+    
         [self.livingItems enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(YQSweepCardItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if(idx>0){
-                YQSweepCardItem *oldItem = self.livingItems[idx-1];
-                CGFloat scale = oldItem.itemScale*self.backItemScale;//缩放是前一张的scale倍
-                obj.itemScale = scale;
+            if(idx == self.livingItems.count-1){
+                obj.itemScale = 1.0f;
+                obj.transform = CGAffineTransformIdentity;
+            }else{
+                NSInteger topIndex = self.livingItems.count-idx-1;
+                CGFloat scale = 1-self.backItemOffset*2*topIndex/self.topItemSize.width;
                 //上移露出边框
-                CGFloat realOffset = self.backItemOffset/scale;
-                obj.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(scale, scale), CGAffineTransformMakeTranslation(0, -realOffset));
+                CGFloat moveDistance = self.topItemSize.height*(1-scale)/2;
+                NSLog(@"moveDistance ==== %lf",moveDistance);
+                obj.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(scale, scale), CGAffineTransformMakeTranslation(0, -moveDistance-self.backItemOffset));
                 
             }
             
         }];
+        
 
     }
     
 }
 
 #pragma mark override
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.topItemSize = CGSizeMake(CGRectGetWidth(self.bounds)-self.contentInsets.left-self.contentInsets.right, CGRectGetHeight(self.bounds)-self.contentInsets.top-self.contentInsets.bottom);
+}
+
 - (void)setDataSource:(id<YQSweepCardViewDataSource>)dataSource{
     _dataSource = dataSource;
     if(dataSource){

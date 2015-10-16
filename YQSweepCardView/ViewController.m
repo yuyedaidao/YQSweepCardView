@@ -26,9 +26,13 @@
 
 
 - (YQSweepCardItem *)sweepCardView:(YQSweepCardView *)sweepCardView itemForIndex:(NSInteger)index{
-    NSLog(@"------%d",index);
     YQSweepCardItem *item =  [sweepCardView dequeueReusableItemWithIdentifier:@"A"];
-    item.backgroundColor = [UIColor grayColor];
+    item.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    UILabel *label = [[UILabel alloc] init];
+    label.text = [@(index) stringValue];
+    [label sizeToFit];
+    [item addSubview:label];
+    label.center = CGPointMake(index*20, 50);
     return item;
 }
 - (void)didReceiveMemoryWarning {
