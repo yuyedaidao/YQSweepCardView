@@ -24,7 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark optional
 @property (nonatomic, assign) UIEdgeInsets contentInsets;
 @property (nonatomic, assign) IBInspectable NSInteger stackCount;
-@property (nonatomic, assign) IBInspectable CGFloat backItemScale;
 /**
  *  为了让后边的item在视图上显示出边框，调节此值可能需要配合调节contentInsets的值
  */
