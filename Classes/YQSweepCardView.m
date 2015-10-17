@@ -35,7 +35,7 @@
  *  堆叠的数量
  */
 static NSInteger const StackCount = 3;
-
+static CGFloat const LimitedRotate = M_PI_2;
 @interface YQSweepCardView ()
 
 @property (nonatomic, strong) NSMutableDictionary *registerInfo;
@@ -43,6 +43,7 @@ static NSInteger const StackCount = 3;
 @property (nonatomic, strong) NSMutableArray<YQSweepCardItem *> *livingItems;
 @property (nonatomic, assign) CGSize topItemSize;
 @property (nonatomic, assign) NSInteger currentIndex;
+
 
 /**
  *  正常情况下偏头度数
@@ -78,40 +79,94 @@ static NSInteger const StackCount = 3;
 #pragma mark self help
 
 - (void)commonInit{
+    _rotate = -M_PI_4;
     _backItemOffset = 5.0f;
     _contentInsets = UIEdgeInsetsMake(30, 10, 10, 10);
     _stackCount = StackCount;
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
-    [self addGestureRecognizer:pan];
+    _animationDuration = 1.0;
+    
 //    UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
 //    left.direction = UISwipeGestureRecognizerDirectionLeft;
 //    [self addGestureRecognizer:left];
 //    UISwipeGestureRecognizer *down = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
 //    down.direction = UISwipeGestureRecognizerDirectionDown;
 //    [self addGestureRecognizer:down];
-    UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
-    right.direction = UISwipeGestureRecognizerDirectionDown;
-    [self addGestureRecognizer:right];
+//    UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeAction:)];
+//    right.direction = UISwipeGestureRecognizerDirectionRight;
+//    [self addGestureRecognizer:right];
 
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+    [self addGestureRecognizer:pan];
+    
     self.userInteractionEnabled = YES;
 }
 
-- (void)panAction:(id)sender{
+- (void)panAction:(UIPanGestureRecognizer *)sender{
+    CGFloat translation = [sender translationInView:self].x;
     //左滑，随手势向左下角歪到，结束时根据临界值决定复位或者移除视图
-}
-- (void)swipeAction:(UISwipeGestureRecognizer *)sender{
-    //向右扫，进来视图
-    if(self.currentIndex>0){
-        if(sender.state == UIGestureRecognizerStateEnded){
-            //先向右摆个
-            if([self.dataSource respondsToSelector:@selector(sweepCardView:itemForIndex:)]){
-                YQSweepCardItem *item = [self.dataSource sweepCardView:self itemForIndex:self.currentIndex-1];
-                //先放到左边看不见的地方，同时旋转一下 弄成个歪脖子效果
-                item.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(_rotate), CGAffineTransformMakeTranslation(<#CGFloat tx#>, 0))
+    if(sender.state == UIGestureRecognizerStateBegan){
+        self.livingItems.lastObject.layer.anchorPoint = CGPointMake(1, 1);
+        self.livingItems.lastObject.layer.position = CGPointMake(self.topItemSize.width+self.contentInsets.left, self.topItemSize.height+self.contentInsets.top);
+    }else if(sender.state == UIGestureRecognizerStateChanged){
+        
+        if(translation < 0){
+            //让卡片左歪脖
+            self.livingItems.lastObject.transform = CGAffineTransformMakeRotation(LimitedRotate*(translation/CGRectGetWidth(self.bounds)));
+        }
+    }else if(sender.state == UIGestureRecognizerStateEnded){
+        //停在起始左边就滑走，停在起始右边就滑入新卡片
+        if(translation < 0){
+            //飞出去
+            YQSweepCardItem *topItem = self.livingItems.lastObject;
+            [self.livingItems removeLastObject];
+    
+            [UIView animateWithDuration:_animationDuration delay:0 usingSpringWithDamping:10 initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                topItem.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(0), CGAffineTransformMakeTranslation(-self.topItemSize.width-self.contentInsets.left, 0));
+            } completion:^(BOOL finished) {
+                [topItem removeFromSuperview];
+                //添加新item在最下边
+                if(self.currentIndex+self.stackCount<self.itemCount){
+                    if([self.dataSource respondsToSelector:@selector(sweepCardView:itemForIndex:)]){
+                        YQSweepCardItem *item = [self.dataSource sweepCardView:self itemForIndex:self.currentIndex+self.stackCount];
+                        item.layer.anchorPoint = CGPointMake(1, 1);
+                        item.layer.position = CGPointMake(self.topItemSize.width+self.contentInsets.left, self.topItemSize.height+self.contentInsets.top);
+                        [self.livingItems insertObject:item atIndex:0];
+                        [self addSubview:item];
+                        [self sendSubviewToBack:item];
+                        self.currentIndex += 1;
+                        //先放到左边看不见的地方，同时旋转一下 弄成个歪脖子效果
+    //                    item.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(_rotate), CGAffineTransformMakeTranslation(-self.topItemSize.width/2-a-b, 0));
+                    }
+                }
+            }];
+        }else{
+            if(self.currentIndex>0){
+                if(sender.state == UIGestureRecognizerStateEnded){
+                    CGFloat a = self.topItemSize.height/2*sin(_rotate);
+                    CGFloat b = self.topItemSize.width/2*cos(_rotate);
+                    if([self.dataSource respondsToSelector:@selector(sweepCardView:itemForIndex:)]){
+                        YQSweepCardItem *item = [self.dataSource sweepCardView:self itemForIndex:self.currentIndex-1];
+                        //先放到左边看不见的地方，同时旋转一下 弄成个歪脖子效果
+                        item.layer.anchorPoint = CGPointMake(0.5, 0.5);
+                        item.layer.position = CGPointMake(self.topItemSize.width/2+self.contentInsets.left, self.topItemSize.height/2+self.contentInsets.top);
+                        [self.livingItems addObject:item];
+                        [self addSubview:item];
+                        [UIView animateWithDuration:1.3 delay:0 usingSpringWithDamping:10 initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                            item.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(_rotate), CGAffineTransformMakeTranslation(-self.topItemSize.width-a-b, 0));
+                        } completion:^(BOOL finished) {
+                            item.layer.anchorPoint = CGPointMake(1, 1);
+                            item.layer.position = CGPointMake(self.topItemSize.width+self.contentInsets.left, self.topItemSize.height+self.contentInsets.top);
+                            [self.livingItems removeObjectAtIndex:0];
+                        }];
+                        
+                    }
+                }
             }
         }
+
     }
 }
+
 
 #pragma mark public
 - (__kindof YQSweepCardItem *)dequeueReusableItemWithIdentifier:(NSString *)identifier{
