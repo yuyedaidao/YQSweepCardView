@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 //    [self.cardView registerClass:[YQSweepCardItem class] forItemReuseIdentifier:@"A"];
     [self.cardView registerNib:[UINib nibWithNibName:@"MyCard" bundle:nil] forItemReuseIdentifier:@"B"];
-    self.cardView.dataSource = self;
+//    self.cardView.dataSource = self;
     self.cardView.itemCount = 5;
     
     [self.cardView reloadData];

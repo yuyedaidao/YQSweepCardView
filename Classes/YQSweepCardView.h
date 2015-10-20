@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) IBInspectable CGFloat backItemOffset;
 #pragma mark required
-@property (nonatomic, weak) IBInspectable id<YQSweepCardViewDataSource> dataSource;
+@property (nonatomic, weak) IBOutlet id<YQSweepCardViewDataSource> dataSource;
 @property (nonatomic, assign) IBInspectable NSInteger itemCount;
 - (void)registerNib:(nullable UINib *)nib forItemReuseIdentifier:(NSString *)identifier;
 - (void)registerClass:(nullable Class)itemClass forItemReuseIdentifier:(NSString *)identifier;
