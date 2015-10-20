@@ -191,7 +191,7 @@ static CGFloat const LimitedRotate = M_PI_2;
         }else{
             if(self.currentIndex>0){
                 if(sender.state == UIGestureRecognizerStateEnded){
-                    NSLog(@"进来===== %ld",self.currentIndex);
+    
                     if([self.dataSource respondsToSelector:@selector(sweepCardView:itemForIndex:)]){
                         YQSweepCardItem *newItem = [self.dataSource sweepCardView:self itemForIndex:self.currentIndex-1];
                         YQSweepCardItem *oldItem = nil;

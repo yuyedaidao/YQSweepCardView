@@ -30,7 +30,7 @@
 
 
 - (YQSweepCardItem *)sweepCardView:(YQSweepCardView *)sweepCardView itemForIndex:(NSInteger)index{
-    NSLog(@"index == %ld",index);
+
     YQSweepCardItem *item =  [sweepCardView dequeueReusableItemWithIdentifier:@"B"];
     item.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
     item.layer.cornerRadius = 5.0f;
