@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "YQSweepCardView.h"
+#import "MyCard.h"
+
 @interface ViewController ()<YQSweepCardViewDataSource>
 @property (weak, nonatomic) IBOutlet YQSweepCardView *cardView;
 
@@ -18,21 +20,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self.cardView registerClass:[YQSweepCardItem class] forItemReuseIdentifier:@"A"];
+//    [self.cardView registerClass:[YQSweepCardItem class] forItemReuseIdentifier:@"A"];
+    [self.cardView registerNib:[UINib nibWithNibName:@"MyCard" bundle:nil] forItemReuseIdentifier:@"B"];
     self.cardView.dataSource = self;
-    self.cardView.itemCount = 7;
+    self.cardView.itemCount = 5;
+    
     [self.cardView reloadData];
 }
 
 
 - (YQSweepCardItem *)sweepCardView:(YQSweepCardView *)sweepCardView itemForIndex:(NSInteger)index{
-    YQSweepCardItem *item =  [sweepCardView dequeueReusableItemWithIdentifier:@"A"];
+    NSLog(@"index == %ld",index);
+    YQSweepCardItem *item =  [sweepCardView dequeueReusableItemWithIdentifier:@"B"];
     item.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
-    UILabel *label = [[UILabel alloc] init];
-    label.text = [@(index) stringValue];
-    [label sizeToFit];
-    [item addSubview:label];
-    label.center = CGPointMake(index*20, 50);
+    item.layer.cornerRadius = 5.0f;
+    item.clipsToBounds = YES;
     return item;
 }
 - (void)didReceiveMemoryWarning {

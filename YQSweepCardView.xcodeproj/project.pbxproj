@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21A441C21BD62521002CF7F6 /* MyCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A441C11BD62521002CF7F6 /* MyCard.m */; settings = {ASSET_TAGS = (); }; };
+		21A441C41BD6252F002CF7F6 /* MyCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A441C31BD6252F002CF7F6 /* MyCard.xib */; settings = {ASSET_TAGS = (); }; };
 		5502CD081BCEA88A00FD6246 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD071BCEA88A00FD6246 /* main.m */; };
 		5502CD0B1BCEA88A00FD6246 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD0A1BCEA88A00FD6246 /* AppDelegate.m */; };
 		5502CD0E1BCEA88A00FD6246 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5502CD0D1BCEA88A00FD6246 /* ViewController.m */; };
@@ -41,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21A441C01BD62521002CF7F6 /* MyCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCard.h; sourceTree = "<group>"; };
+		21A441C11BD62521002CF7F6 /* MyCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCard.m; sourceTree = "<group>"; };
+		21A441C31BD6252F002CF7F6 /* MyCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCard.xib; sourceTree = "<group>"; };
 		5502CD031BCEA88A00FD6246 /* YQSweepCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YQSweepCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5502CD071BCEA88A00FD6246 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5502CD091BCEA88A00FD6246 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +126,9 @@
 				5502CD141BCEA88A00FD6246 /* LaunchScreen.storyboard */,
 				5502CD171BCEA88A00FD6246 /* Info.plist */,
 				5502CD061BCEA88A00FD6246 /* Supporting Files */,
+				21A441C01BD62521002CF7F6 /* MyCard.h */,
+				21A441C11BD62521002CF7F6 /* MyCard.m */,
+				21A441C31BD6252F002CF7F6 /* MyCard.xib */,
 			);
 			path = YQSweepCardView;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 				5502CD161BCEA88A00FD6246 /* LaunchScreen.storyboard in Resources */,
 				5502CD131BCEA88A00FD6246 /* Assets.xcassets in Resources */,
 				5502CD111BCEA88A00FD6246 /* Main.storyboard in Resources */,
+				21A441C41BD6252F002CF7F6 /* MyCard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5502CD0E1BCEA88A00FD6246 /* ViewController.m in Sources */,
+				21A441C21BD62521002CF7F6 /* MyCard.m in Sources */,
 				5502CD0B1BCEA88A00FD6246 /* AppDelegate.m in Sources */,
 				5502CD081BCEA88A00FD6246 /* main.m in Sources */,
 				5502CD411BCEA92000FD6246 /* YQSweepCardView.m in Sources */,
@@ -524,6 +534,7 @@
 				5502CD321BCEA88A00FD6246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5502CD331BCEA88A00FD6246 /* Build configuration list for PBXNativeTarget "YQSweepCardViewTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +543,7 @@
 				5502CD351BCEA88A00FD6246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5502CD361BCEA88A00FD6246 /* Build configuration list for PBXNativeTarget "YQSweepCardViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +552,7 @@
 				5502CD381BCEA88A00FD6246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
